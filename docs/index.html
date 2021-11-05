@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #20794d; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -78,14 +78,13 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.sc { color: #20794d; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
-
 
   <!--radix_placeholder_meta_tags-->
   <title>DACSS 601 Fall 2021: Student Submissions</title>
@@ -1606,10 +1605,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refs = $(this).attr('data-cites').split(" ");
-        var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
-        }).join("\n");
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2308,7 +2304,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.9.4/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2412,7 +2408,6 @@ function init_posts_list() {
 
       // mark posts that match the category visible
       var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
       var posts = $('.post-metadata').map(function(idx, script) {
         var metadata = $.parseJSON($(script).html());
         var post = null;
@@ -2428,7 +2423,7 @@ function init_posts_list() {
       set_posts_visible(posts, true);
 
       // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
+      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
 
       // update the list_caption
       var list_caption = $('.posts-list-caption');
@@ -2491,6 +2486,461 @@ function init_posts_list() {
 <div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Student Submissions">Student Submissions</h1>
+<a href="posts/2021-10-10-hw2kjohnson/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Oct. 10, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Kirsten Johnson</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>Homework 2- Reading in Data</h2>
+<div class="dt-tags"></div>
+<p>Reading in Data</p>
+</div>
+</a>
+<a href="posts/2021-10-06-hw1postkjohnson/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Oct. 7, 2021</div>
+<div class="dt-authors"></div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>Homework 1- My first post</h2>
+<div class="dt-tags"></div>
+<p>Trying out a post!</p>
+</div>
+</a>
+<a href="posts/2021-10-05-hw3-blog-georges/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Oct. 5, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Megan Georges</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>Homework 3: Basic Data Wrangling</h2>
+<div class="dt-tags"></div>
+<p>Practice wrangling data with the Australian Marraige Law Excel document.</p>
+</div>
+</a>
+<a href="posts/2021-10-04-hw2-justin/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Oct. 4, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Justin</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="posts/2021-10-04-hw2-justin/hw2-justin_files/figure-html5/unnamed-chunk-2-1.png"/>
+</div>
+<div class="description">
+<h2>HW-2 Updated</h2>
+<div class="dt-tags"></div>
+<p>Reading in blogpost data</p>
+</div>
+</a>
+<a href="posts/2021-10-04-hw3-data-wrangling/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Oct. 4, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Eliza Geeslin</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>HW3 Data Wrangling</h2>
+<div class="dt-tags"></div>
+<p>Lets get this data wrangled!</p>
+</div>
+</a>
+<a href="posts/2021-10-04-hw3-continued-allyson-beach/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Oct. 4, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Allyson Beach</div>
+</div>
+</div>
+<div class="thumbnail"></div>
+<div class="description">
+<h2>HW 3 Continued with the Australian Marriage Dataset</h2>
+<div class="dt-tags"></div>
+<p></p>
+</div>
+</a>
+<a href="posts/2021-10-03-hw3-brittany-kenison/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Oct. 3, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Brittany Kenison</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>HW#3 - Transforming the US public schools data set</h2>
+<div class="dt-tags"></div>
+<p>Using the public school characteristic data set collected in the 2017-2018 school year</p>
+</div>
+</a>
+<a href="posts/2021-10-01-hw2-post-georges/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Oct. 1, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Megan Georges</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>Homework Two: Reading in Data</h2>
+<div class="dt-tags"></div>
+<p>HW2 practice reading in data with the railroad_2012_clean_county.csv dataset</p>
+</div>
+</a>
+<a href="posts/2021-10-01-hw3-allyson-beach/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Oct. 1, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Allyson Beach</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>HW3 with the Organic Poultry Dataset</h2>
+<div class="dt-tags"></div>
+<p>HW3</p>
+</div>
+</a>
+<a href="posts/2021-10-01-the-pivot-challenge-molly-hackbarth/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Oct. 1, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Molly Hackbarth</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>The Pivot Challenge</h2>
+<div class="dt-tags"></div>
+<p>Trying to understand the world of pivot longer and pivot wider with debt in trillions and household income.</p>
+</div>
+</a>
+<a href="posts/2021-09-30-hw1allysonbeach/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 30, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Allyson Beach</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2021-09-30-hw1allysonbeach/hw1allysonbeach_files/figure-html5/plot-1.png"/>
+</div>
+<div class="description">
+<h2>hw1allysonbeach</h2>
+<div class="dt-tags"></div>
+<p>HW1</p>
+</div>
+</a>
+<a href="posts/2021-09-30-hw2-allyson-beach/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 30, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Allyson Beach</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2021-09-30-hw2-allyson-beach/hw2-allyson-beach_files/figure-html5/factors-1.png"/>
+</div>
+<div class="description">
+<h2>HW2</h2>
+<div class="dt-tags"></div>
+<p>HW2</p>
+</div>
+</a>
+<a href="posts/2021-09-29-first-blog-post-using-distill/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 29, 2021</div>
+<div class="dt-authors"></div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>First blog post using Distill</h2>
+<div class="dt-tags"></div>
+<p>I'm going to make my first blog post. Once I figure that out, I'll try reading in some data.I am also experimenting with R Markdown text formatting such as **bold text** and *italics*</p>
+</div>
+</a>
+<a href="posts/2021-09-29-reading-in-data-hw2/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 29, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Cynthia Hester</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2021-09-29-reading-in-data-hw2/Reading_in_data_HW2_files/figure-html5/unnamed-chunk-6-1.png"/>
+</div>
+<div class="description">
+<h2>Homework_2 </h2>
+<div class="dt-tags"></div>
+<p>Reading in Data</p>
+</div>
+</a>
+<a href="posts/2021-09-27-homework-3-basic-data-wrangling/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["homework 3","data wrangling","organiceggspoultry.xls"]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 27, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Claire Battaglia</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>homework 3: basic data wrangling</h2>
+<div class="dt-tags">
+<div class="dt-tag">homework 3</div>
+<div class="dt-tag">data wrangling</div>
+<div class="dt-tag">organiceggspoultry.xls</div>
+</div>
+<p>the adventure continues</p>
+</div>
+</a>
+<a href="posts/2021-09-26-geeslin-hw-2-read-in-data/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 26, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Eliza Geeslin</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>Reading in the Data (Homework 2): Birds</h2>
+<div class="dt-tags"></div>
+<p>Practice getting the dataset into RStudio and beginning to understand it.</p>
+</div>
+</a>
+<a href="posts/2021-09-26-hw1-justin/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 26, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Justin Flattery</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>HW1</h2>
+<div class="dt-tags"></div>
+<p>Reading in blogpost data</p>
+</div>
+</a>
+<a href="posts/2021-09-26-insert-post-title/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 26, 2021</div>
+<div class="dt-authors"></div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>[HW3 Data Wrangling]</h2>
+<div class="dt-tags"></div>
+<p>In this distill blog post I will be reading in the eggs data and perforrming basic data wrangling operations using dplyr functions.</p>
+</div>
+</a>
+<a href="posts/2021-09-25-hw1-blog-georges/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 25, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Megan Georges</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2021-09-25-hw1-blog-georges/hw1-blog-georges_files/figure-html5/unnamed-chunk-3-1.png"/>
+</div>
+<div class="description">
+<h2>Homework 1: Blog Post</h2>
+<div class="dt-tags"></div>
+<p>My 1st attempt at a blog post.</p>
+</div>
+</a>
+<a href="posts/2021-09-23-homework-3-molly-hackbarth/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 23, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Molly Hackbarth</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>Homework 3</h2>
+<div class="dt-tags"></div>
+<p>Working with Australian Marriages Laws.</p>
+</div>
+</a>
+<a href="posts/2021-09-18-insert-post-title/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 18, 2021</div>
+<div class="dt-authors"></div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>Tyler Paske HW#2</h2>
+<div class="dt-tags"></div>
+<p>My attempt to post reading in eggs data</p>
+</div>
+</a>
+<a href="posts/2021-09-15-examining-characteristics-of-public-schools/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 16, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Brittany Kenison</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>HW#2 - Getting familiar with the US public schools data set</h2>
+<div class="dt-tags"></div>
+<p>Using the public school characteristic dataset collected in the 2017-2018 school year</p>
+</div>
+</a>
+<a href="posts/2021-09-16-homework-2-molly-hackbarth/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 16, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Molly Hackbarth</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>Homework 2</h2>
+<div class="dt-tags"></div>
+<p>Homework 2 - Reading and pulling data.</p>
+</div>
+</a>
+<a href="posts/2021-09-16-quinn-he-hw2/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 16, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Quinn He</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2021-09-16-quinn-he-hw2/quinn-he-hw2_files/figure-html5/unnamed-chunk-2-1.png"/>
+</div>
+<div class="description">
+<h2>Quinn He HW2</h2>
+<div class="dt-tags"></div>
+<p>Homework 2 where I try to open datasets and see what I can do with it.</p>
+</div>
+</a>
+<a href="posts/2021-09-15-blog-post-1-read-in-data/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 15, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Claire Battaglia</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>blog post 1: reading in data</h2>
+<div class="dt-tags"></div>
+<p>practicing the unsexy first step of data analysis</p>
+</div>
+</a>
+<a href="posts/2021-09-15-homework-1-molly-hackbarth/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 15, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Molly Hackbarth</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2021-09-15-homework-1-molly-hackbarth/homework-1_files/figure-html5/readr-1.png"/>
+</div>
+<div class="description">
+<h2>Homework 1</h2>
+<div class="dt-tags"></div>
+<p>Homework 1 - basics of R.</p>
+</div>
+</a>
+<a href="posts/2021-09-15-lets-try-a-blog-shall-we/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["-homework 1 -Joe Davis"]}</script>
+<div class="metadata">
+<div class="publishedDate">Sept. 14, 2021</div>
+<div class="dt-authors">
+<div class="dt-author">Joe Davis</div>
+</div>
+</div>
+<div class="thumbnail">
+<img data-src="posts/2021-09-15-lets-try-a-blog-shall-we/lets-try-a-blog-shall-we_files/figure-html5/some basic graphs of that data-1.png"/>
+</div>
+<div class="description">
+<h2>Let's try a blog, shall we?</h2>
+<div class="dt-tags">
+<div class="dt-tag">-homework 1 -Joe Davis</div>
+</div>
+<p>Homework 1, trying to get a blog up without breaking the whole class website.</p>
+</div>
+</a>
 <a href="posts/welcome/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":["welcome"]}</script>
 <div class="metadata">
@@ -2517,7 +2967,23 @@ reading what we have to say!</p>
 <h3>Categories</h3>
 <ul>
 <li>
-<a href="#category:articles">articles</a>
+<a href="#category:Articles">Articles</a>
+<span class="category-count">(28)</span>
+</li>
+<li>
+<a href="#category:-homework_1_-Joe_Davis">-homework 1 -Joe Davis</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:data_wrangling">data wrangling</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:homework_3">homework 3</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:organiceggspoultry.xls">organiceggspoultry.xls</a>
 <span class="category-count">(1)</span>
 </li>
 <li>
@@ -2531,7 +2997,7 @@ reading what we have to say!</p>
 <a href="#">More articles &raquo;</a>
 </div>
 </div>
-<!--/radix_placeholder_article_listing-->
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
 <h1>Student Submissions</h1>
@@ -2547,10 +3013,8 @@ reading what we have to say!</p>
 </div>
 <section class="index-title">
 <h1>
-DACSS 601
 </h1>
 <h2>
-Fall 2021
 </h2>
 </section>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
